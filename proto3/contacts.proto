@@ -1,0 +1,30 @@
+// 首行：语法制定行，如果不加的话默认是proto2
+/* 首行指的是去除注释的第一行 */
+syntax = "proto3";
+package contacts2; //包命名空间，一个项目中package的命名是唯一的
+
+import "phone.proto"; //导包
+
+//message Phone {
+//    string number = 1;
+//}
+
+//定义联系人message
+message PeopleInfo {
+    string name = 1; //姓名 =1不是赋值，而是标识字段编号
+    int32 age = 2; //年龄 不同的字段要用不同的标识
+    //repeated string phone_numbers = 3; // 数组
+    //repeated Phone phone = 3; //Nested message 
+
+
+    message Phone {
+        string number = 1;
+    }
+
+    repeated phone.Phone phone = 3;
+}
+
+//定义通讯录 message
+message Contacts {
+    repeated PeopleInfo contacts = 1;
+}
