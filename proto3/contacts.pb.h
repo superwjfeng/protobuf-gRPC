@@ -30,7 +30,6 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
-#include "phone.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_contacts_2eproto
@@ -345,22 +344,22 @@ class PeopleInfo final :
     kNameFieldNumber = 1,
     kAgeFieldNumber = 2,
   };
-  // repeated .phone.Phone phone = 3;
+  // repeated .contacts2.PeopleInfo.Phone phone = 3;
   int phone_size() const;
   private:
   int _internal_phone_size() const;
   public:
   void clear_phone();
-  ::phone::Phone* mutable_phone(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::phone::Phone >*
+  ::contacts2::PeopleInfo_Phone* mutable_phone(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::contacts2::PeopleInfo_Phone >*
       mutable_phone();
   private:
-  const ::phone::Phone& _internal_phone(int index) const;
-  ::phone::Phone* _internal_add_phone();
+  const ::contacts2::PeopleInfo_Phone& _internal_phone(int index) const;
+  ::contacts2::PeopleInfo_Phone* _internal_add_phone();
   public:
-  const ::phone::Phone& phone(int index) const;
-  ::phone::Phone* add_phone();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::phone::Phone >&
+  const ::contacts2::PeopleInfo_Phone& phone(int index) const;
+  ::contacts2::PeopleInfo_Phone* add_phone();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::contacts2::PeopleInfo_Phone >&
       phone() const;
 
   // string name = 1;
@@ -394,7 +393,7 @@ class PeopleInfo final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::phone::Phone > phone_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::contacts2::PeopleInfo_Phone > phone_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     int32_t age_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -694,38 +693,41 @@ inline void PeopleInfo::set_age(int32_t value) {
   // @@protoc_insertion_point(field_set:contacts2.PeopleInfo.age)
 }
 
-// repeated .phone.Phone phone = 3;
+// repeated .contacts2.PeopleInfo.Phone phone = 3;
 inline int PeopleInfo::_internal_phone_size() const {
   return _impl_.phone_.size();
 }
 inline int PeopleInfo::phone_size() const {
   return _internal_phone_size();
 }
-inline ::phone::Phone* PeopleInfo::mutable_phone(int index) {
+inline void PeopleInfo::clear_phone() {
+  _impl_.phone_.Clear();
+}
+inline ::contacts2::PeopleInfo_Phone* PeopleInfo::mutable_phone(int index) {
   // @@protoc_insertion_point(field_mutable:contacts2.PeopleInfo.phone)
   return _impl_.phone_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::phone::Phone >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::contacts2::PeopleInfo_Phone >*
 PeopleInfo::mutable_phone() {
   // @@protoc_insertion_point(field_mutable_list:contacts2.PeopleInfo.phone)
   return &_impl_.phone_;
 }
-inline const ::phone::Phone& PeopleInfo::_internal_phone(int index) const {
+inline const ::contacts2::PeopleInfo_Phone& PeopleInfo::_internal_phone(int index) const {
   return _impl_.phone_.Get(index);
 }
-inline const ::phone::Phone& PeopleInfo::phone(int index) const {
+inline const ::contacts2::PeopleInfo_Phone& PeopleInfo::phone(int index) const {
   // @@protoc_insertion_point(field_get:contacts2.PeopleInfo.phone)
   return _internal_phone(index);
 }
-inline ::phone::Phone* PeopleInfo::_internal_add_phone() {
+inline ::contacts2::PeopleInfo_Phone* PeopleInfo::_internal_add_phone() {
   return _impl_.phone_.Add();
 }
-inline ::phone::Phone* PeopleInfo::add_phone() {
-  ::phone::Phone* _add = _internal_add_phone();
+inline ::contacts2::PeopleInfo_Phone* PeopleInfo::add_phone() {
+  ::contacts2::PeopleInfo_Phone* _add = _internal_add_phone();
   // @@protoc_insertion_point(field_add:contacts2.PeopleInfo.phone)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::phone::Phone >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::contacts2::PeopleInfo_Phone >&
 PeopleInfo::phone() const {
   // @@protoc_insertion_point(field_list:contacts2.PeopleInfo.phone)
   return _impl_.phone_;

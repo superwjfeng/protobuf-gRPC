@@ -105,20 +105,17 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_contacts_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016contacts.proto\022\tcontacts2\032\013phone.proto"
-  "\"]\n\nPeopleInfo\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001("
-  "\005\022\033\n\005phone\030\003 \003(\0132\014.phone.Phone\032\027\n\005Phone\022"
-  "\016\n\006number\030\001 \001(\t\"3\n\010Contacts\022\'\n\010contacts\030"
-  "\001 \003(\0132\025.contacts2.PeopleInfob\006proto3"
+  "\n\016contacts.proto\022\tcontacts2\"l\n\nPeopleInf"
+  "o\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022*\n\005phone\030\003 "
+  "\003(\0132\033.contacts2.PeopleInfo.Phone\032\027\n\005Phon"
+  "e\022\016\n\006number\030\001 \001(\t\"3\n\010Contacts\022\'\n\010contact"
+  "s\030\001 \003(\0132\025.contacts2.PeopleInfob\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_contacts_2eproto_deps[1] = {
-  &::descriptor_table_phone_2eproto,
-};
 static ::_pbi::once_flag descriptor_table_contacts_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_contacts_2eproto = {
-    false, false, 196, descriptor_table_protodef_contacts_2eproto,
+    false, false, 198, descriptor_table_protodef_contacts_2eproto,
     "contacts.proto",
-    &descriptor_table_contacts_2eproto_once, descriptor_table_contacts_2eproto_deps, 1, 3,
+    &descriptor_table_contacts_2eproto_once, nullptr, 0, 3,
     schemas, file_default_instances, TableStruct_contacts_2eproto::offsets,
     file_level_metadata_contacts_2eproto, file_level_enum_descriptors_contacts_2eproto,
     file_level_service_descriptors_contacts_2eproto,
@@ -340,9 +337,6 @@ class PeopleInfo::_Internal {
  public:
 };
 
-void PeopleInfo::clear_phone() {
-  _impl_.phone_.Clear();
-}
 PeopleInfo::PeopleInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -442,7 +436,7 @@ const char* PeopleInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
         } else
           goto handle_unusual;
         continue;
-      // repeated .phone.Phone phone = 3;
+      // repeated .contacts2.PeopleInfo.Phone phone = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
@@ -500,7 +494,7 @@ uint8_t* PeopleInfo::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_age(), target);
   }
 
-  // repeated .phone.Phone phone = 3;
+  // repeated .contacts2.PeopleInfo.Phone phone = 3;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_phone_size()); i < n; i++) {
     const auto& repfield = this->_internal_phone(i);
@@ -524,7 +518,7 @@ size_t PeopleInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .phone.Phone phone = 3;
+  // repeated .contacts2.PeopleInfo.Phone phone = 3;
   total_size += 1UL * this->_internal_phone_size();
   for (const auto& msg : this->_impl_.phone_) {
     total_size +=

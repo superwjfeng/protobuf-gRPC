@@ -3,7 +3,7 @@
 syntax = "proto3";
 package contacts2; //包命名空间，一个项目中package的命名是唯一的
 
-import "phone.proto"; //导包
+//import "phone.proto"; //导包
 
 //message Phone {
 //    string number = 1;
@@ -21,7 +21,8 @@ message PeopleInfo {
         string number = 1;
     }
 
-    repeated phone.Phone phone = 3;
+    //repeated phone.Phone phone = 3;
+    repeated Phone phone = 3;
 }
 
 //定义通讯录 message
