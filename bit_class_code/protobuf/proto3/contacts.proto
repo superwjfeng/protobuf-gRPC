@@ -1,0 +1,64 @@
+// 首行：语法指定行
+syntax = "proto3";
+package contacts2;
+
+import "google/protobuf/any.proto";
+
+message Address {
+  string home_address = 1; // 家庭住址
+  string unit_address = 2; // 单位地址
+}
+
+// 定义联系人message
+message PeopleInfo {
+  string name = 1;  // 姓名
+  int32 age = 2;    // 年龄  
+  message Phone {
+    string number = 1;
+    enum PhoneType {
+      MP = 0; // 移动电话
+      TEL = 1; // 固定电话
+    }
+    PhoneType type = 2;
+  }
+  repeated Phone phone = 3;  // 电话信息
+  google.protobuf.Any data = 4; 
+  oneof other_contact {
+    // repeated string qq = 5;  // 不能使用 repeated
+    string qq = 5;
+    string wechat = 6;
+  }
+
+  map<string, string> remark = 7; // 备注信息
+}
+
+// 通讯录 message
+message Contacts {
+  repeated PeopleInfo contacts = 1;
+}
+
+
+
+
+
+
+
+
+// import "phone.proto";
+
+// // message Phone {
+// //   string number = 1;
+// // }
+
+
+// // 定义联系人message
+// message PeopleInfo {
+//   string name = 1;  // 姓名
+//   int32 age = 2;    // 年龄  
+//   // repeated string phone_numbers = 3;
+
+//   // message Phone {
+//   //   string number = 1;
+//   // }
+//   repeated phone.Phone phone = 3;
+// }
