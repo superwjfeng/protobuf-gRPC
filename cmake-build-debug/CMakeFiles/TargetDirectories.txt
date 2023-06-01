@@ -1,3 +1,0 @@
-/Users/wjfeng/Desktop/cloud_distributed_system/protofbuf--C++版本/protobuf/cmake-build-debug/CMakeFiles/protobuf.dir
-/Users/wjfeng/Desktop/cloud_distributed_system/protofbuf--C++版本/protobuf/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/wjfeng/Desktop/cloud_distributed_system/protofbuf--C++版本/protobuf/cmake-build-debug/CMakeFiles/rebuild_cache.dir
