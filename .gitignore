@@ -1,0 +1,17 @@
+build/
+bin/
+
+# 忽略编译生成的可执行文件
+*.exe
+*.out
+*.app
+*.o
+*.so
+*.dll
+
+# 忽略ide配置文件
+.idea/ 
+.vsdoe/
+
+#macOS
+.DS_Store
