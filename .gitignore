@@ -1,5 +1,11 @@
 build/
 bin/
+lib/
+
+# 排除Debug文件夹和.vs文件夹
+Debug/
+.vs/
+x64/
 
 # 忽略编译生成的可执行文件
 *.exe
@@ -10,8 +16,18 @@ bin/
 *.dll
 
 # 忽略ide配置文件
-.idea/ 
+.idea/
 .vsdoe/
+
+# 排除以.sln、.vcxproj、.vcxproj.filters、.vcsproj.user为结尾的文件
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 
 #macOS
 .DS_Store
+
+#protobuf
+*.pb.cc
+*.pb.h

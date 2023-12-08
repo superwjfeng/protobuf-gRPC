@@ -30,33 +30,33 @@ using namespace bike;
 //   return 0;
 // }
 
-int main() {
-  string data;  // 存储序列化的消息
-  // 从客户端发送请求
-  {
-    list_account_records_response larr;
-    larr.set_code(200);
-    larr.set_desc("ok");
+// int main() {
+//   string data;  // 存储序列化的消息
+//   // 从客户端发送请求
+//   {
+//     list_account_records_response larr;
+//     larr.set_code(200);
+//     larr.set_desc("ok");
 
-    for (int i = 0; i < 5; i++) {
-      list_account_records_response_account_record *ar = larr.add_records();
-      ar->set_type(0);
-      ar->set_limit(i * 100);
-      ar->set_timestamp(time(NULL));
-    }
-    printf("records size before: %d\n", larr.records_size());
-    larr.SerializeToString(&data);
-  }
-  // 服务器端接受请求
-  {
-    list_account_records_response larr;
-    larr.ParseFromString(data);
-    printf("records size after: %d\n", larr.records_size());
-    printf("code: %d\n", larr.code());
-    for (int i = 0; i < larr.records_size(); i++) {
-      const list_account_records_response_account_record &ar = larr.records(i);
-      printf("limit: %d\n", ar.limit());
-    }
-  }
-  return 0;
-}
+//     for (int i = 0; i < 5; i++) {
+//       list_account_records_response_account_record *ar = larr.add_records();
+//       ar->set_type(0);
+//       ar->set_limit(i * 100);
+//       ar->set_timestamp(time(NULL));
+//     }
+//     printf("records size before: %d\n", larr.records_size());
+//     larr.SerializeToString(&data);
+//   }
+//   // 服务器端接受请求
+//   {
+//     list_account_records_response larr;
+//     larr.ParseFromString(data);
+//     printf("records size after: %d\n", larr.records_size());
+//     printf("code: %d\n", larr.code());
+//     for (int i = 0; i < larr.records_size(); i++) {
+//       const list_account_records_response_account_record &ar = larr.records(i);
+//       printf("limit: %d\n", ar.limit());
+//     }
+//   }
+//   return 0;
+// }

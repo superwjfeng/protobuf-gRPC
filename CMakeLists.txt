@@ -18,4 +18,5 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 # include_directories(${Protobuf_INCLUDE_DIRS})
 
 add_subdirectory(bike_demo)
+add_subdirectory(1_fast_start_contact_v1)
 
