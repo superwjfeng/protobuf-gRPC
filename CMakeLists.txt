@@ -32,4 +32,4 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 
 add_subdirectory(protobuf_learn)
-add_subdirectory(grpc_demo)
+# add_subdirectory(grpc_demo)
